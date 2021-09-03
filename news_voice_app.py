@@ -15,7 +15,7 @@ voices = engine.getProperty('voices')
 for voice in voices:
     engine.setProperty('voice', voices[1].id)
 rate = engine.getProperty('rate')
-engine.setProperty('rate', rate -20)
+engine.setProperty('rate', rate - 20)
 engine.say("Hi!")
 engine.say("I will read you the latest news from top sources")
 engine.say("Have a coffee and relax")
@@ -28,6 +28,15 @@ url_cbc = "https://www.cbc.ca/news/world"
 request = requests.get(url_cbc, headers=HEADERS)
 soup_cbc = BeautifulSoup(request.text, "html.parser")
 header_cbc = soup_cbc.find_all("div", class_="card")
+#hi
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+for voice in voices:
+    engine.setProperty('voice', voices[1].id)
+rate = engine.getProperty('rate')
+engine.setProperty('rate', rate )
+engine.say("CBC")
+engine.runAndWait()
 # parsing description
 for description_cbc in header_cbc:
     description_cbc = description_cbc.find("a", {'class': 'contentWrapper'})
@@ -40,8 +49,7 @@ for description_cbc in header_cbc:
         for voice in voices:
             engine.setProperty('voice', voices[1].id)
         rate = engine.getProperty('rate')
-        engine.setProperty('rate', rate -20)
-        engine.say("CBC")
+        engine.setProperty('rate', rate -10)
         engine.say(description_cbc.text)
         engine.runAndWait()
         # output
@@ -55,7 +63,15 @@ url_nyt = "https://www.nytimes.com/section/world"
 request = requests.get(url_nyt, headers=HEADERS)
 soup_nyt = BeautifulSoup(request.text, "html.parser")
 header_nyt = soup_nyt.find_all("li", class_="css-ye6x8s")
-
+#hi
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+for voice in voices:
+    engine.setProperty('voice', voices[1].id)
+rate = engine.getProperty('rate')
+engine.setProperty('rate', rate )
+engine.say("The New York Times")
+engine.runAndWait()
 # parsing description
 for description_nyt in header_nyt:
     description_nyt = description_nyt.find("div", {'class': 'css-1l4spti'}).find('a')
@@ -69,8 +85,7 @@ for description_nyt in header_nyt:
         for voice in voices:
             engine.setProperty('voice', voices[1].id)
         rate = engine.getProperty('rate')
-        engine.setProperty('rate', rate -20)
-        engine.say("The New York Times")
+        engine.setProperty('rate', rate )
         engine.say(description_nyt.text)
         engine.runAndWait()
         # output
@@ -84,7 +99,15 @@ url_alj = "https://www.aljazeera.com/europe/"
 request = requests.get(url_alj, headers=HEADERS)
 soup_alj = BeautifulSoup(request.text, "html.parser")
 header_alj = soup_alj.find_all("article", class_="gc")
-
+#hi
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+for voice in voices:
+    engine.setProperty('voice', voices[1].id)
+rate = engine.getProperty('rate')
+engine.setProperty('rate', rate )
+engine.say("Aljazeera")
+engine.runAndWait()
 # parsing description
 for description_alj in header_alj:
     description_alj = description_alj.find("div", {'class': 'gc__header-wrap'}).find('a')
@@ -98,8 +121,7 @@ for description_alj in header_alj:
         for voice in voices:
             engine.setProperty('voice', voices[1].id)
         rate = engine.getProperty('rate')
-        engine.setProperty('rate', rate -20)
-        engine.say("Aljazeera")
+        engine.setProperty('rate', rate )
         engine.say(description_alj.text)
         engine.runAndWait()
         # output
@@ -112,7 +134,15 @@ url_bbc = "https://www.bbc.com/news/world"
 request = requests.get(url_bbc, headers=HEADERS)
 soup_bbc = BeautifulSoup(request.text, "html.parser")
 header_bbc = soup_bbc.find_all("div", class_="gs-c-promo-body")
-
+#hi
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+for voice in voices:
+    engine.setProperty('voice', voices[1].id)
+rate = engine.getProperty('rate')
+engine.setProperty('rate', rate )
+engine.say("BBC")
+engine.runAndWait()
 # parsing description
 for description_bbc in header_bbc:
     description_bbc = description_bbc.find("a", {'class': 'gs-c-promo-heading'})
@@ -126,8 +156,7 @@ for description_bbc in header_bbc:
         for voice in voices:
             engine.setProperty('voice', voices[1].id)
         rate = engine.getProperty('rate')
-        engine.setProperty('rate', rate -20)
-        engine.say("BBC")
+        engine.setProperty('rate', rate )
         engine.say(description_bbc.text)
         engine.runAndWait()
         # output
@@ -141,7 +170,7 @@ voices = engine.getProperty('voices')
 for voice in voices:
     engine.setProperty('voice', voices[1].id)
 rate = engine.getProperty('rate')
-engine.setProperty('rate', rate -20)
+engine.setProperty('rate', rate )
 engine.say("Whats all i have for you at this moment")
 engine.say("But you can read all the top news in the terminal or follow the links")
 engine.runAndWait()
